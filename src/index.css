@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-hologram {
+    background-size: 200% 200%;
+    animation: hologram 8s linear infinite;
+    text-shadow: 
+      0 0 5px rgba(0,136,255,0.5),
+      0 0 10px rgba(0,136,255,0.3),
+      0 0 15px rgba(0,136,255,0.2);
+  }
+
+  .rgb-led-text {
+    animation: rgb-shift 3s linear infinite;
+    text-shadow:
+      0 0 5px #ff0000,
+      0 0 15px #ff0000,
+      0 0 20px #ff0000,
+      0 0 40px #ff0000;
+  }
+}
+
+@keyframes hologram {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 1;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
+}
+
+@keyframes rgb-shift {
+  0% {
+    color: #ff0000;
+    text-shadow:
+      0 0 5px #ff0000,
+      0 0 15px #ff0000,
+      0 0 20px #ff0000,
+      0 0 40px #ff0000;
+  }
+  33% {
+    color: #00ff00;
+    text-shadow:
+      0 0 5px #00ff00,
+      0 0 15px #00ff00,
+      0 0 20px #00ff00,
+      0 0 40px #00ff00;
+  }
+  66% {
+    color: #0000ff;
+    text-shadow:
+      0 0 5px #0000ff,
+      0 0 15px #0000ff,
+      0 0 20px #0000ff,
+      0 0 40px #0000ff;
+  }
+  100% {
+    color: #ff0000;
+    text-shadow:
+      0 0 5px #ff0000,
+      0 0 15px #ff0000,
+      0 0 20px #ff0000,
+      0 0 40px #ff0000;
+  }
+}
